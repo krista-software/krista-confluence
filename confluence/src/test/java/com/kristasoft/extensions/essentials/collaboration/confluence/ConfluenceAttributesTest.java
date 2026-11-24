@@ -185,7 +185,7 @@ class ConfluenceAttributesTest {
     @DisplayName("Should get client secret from attributes")
     void testGetClientSecret_FromAttributes() {
         Map<String, Object> attrs = new HashMap<>();
-        attrs.put(ConfluenceConstants.CLIENT_SECRET, "my-client-secret-long-enough-value-32");
+        attrs.put(ConfluenceConstants.CLIENT_SECRET, "REDACTED_SECRET");
         confluenceAttributes.setAttributes(attrs);
 
         assertEquals("my-client-secret-long-enough-value-32", confluenceAttributes.getClientSecret());
@@ -319,7 +319,7 @@ class ConfluenceAttributesTest {
     void testValidateAttributes_Success_OAuth() {
         Map<String, Object> attrs = new HashMap<>();
         attrs.put(ConfluenceConstants.CLIENT_ID, "valid-client-id");
-        attrs.put(ConfluenceConstants.CLIENT_SECRET, "valid-client-secret-that-is-at-least-32-characters-long");
+        attrs.put(ConfluenceConstants.CLIENT_SECRET, "REDACTED_SECRET");
 
         assertDoesNotThrow(() -> confluenceAttributes.validateAttributes(attrs));
     }
@@ -390,7 +390,7 @@ class ConfluenceAttributesTest {
     void testValidateAttributes_InvalidClientId_ThrowsException() {
         Map<String, Object> attrs = new HashMap<>();
         attrs.put(ConfluenceConstants.CLIENT_ID, "invalid client id!");
-        attrs.put(ConfluenceConstants.CLIENT_SECRET, "valid-client-secret-that-is-at-least-32-characters-long");
+        attrs.put(ConfluenceConstants.CLIENT_SECRET, "REDACTED_SECRET");
 
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> confluenceAttributes.validateAttributes(attrs));

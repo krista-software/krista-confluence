@@ -92,7 +92,7 @@ class ConfluenceExtensionTest {
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(ConfluenceConstants.DOMAIN_NAME, "myDomain");
         attributes.put(ConfluenceConstants.AUTHORIZATION_EMAIL, "user@example.com");
-        attributes.put(ConfluenceConstants.API_KEY, "apiKey123");
+        attributes.put(ConfluenceConstants.API_KEY, "REDACTED_SECRET");
 
         when(confluenceAttributes.getRestClient()).thenReturn(restClient);
         when(restClient.doSyncGet(eq(APIVersion.V2), isNull(), eq("spaces"))).thenReturn(httpResponse);
@@ -110,7 +110,7 @@ class ConfluenceExtensionTest {
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(ConfluenceConstants.DOMAIN_NAME, "myDomain");
         attributes.put(ConfluenceConstants.AUTHORIZATION_EMAIL, "user@example.com");
-        attributes.put(ConfluenceConstants.API_KEY, "apiKey123");
+        attributes.put(ConfluenceConstants.API_KEY, "REDACTED_SECRET");
 
         when(confluenceAttributes.getRestClient()).thenReturn(restClient);
         when(restClient.doSyncGet(eq(APIVersion.V2), isNull(), eq("spaces"))).thenReturn(httpResponse);
@@ -127,7 +127,7 @@ class ConfluenceExtensionTest {
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(ConfluenceConstants.DOMAIN_NAME, "myDomain");
         attributes.put(ConfluenceConstants.AUTHORIZATION_EMAIL, "user@example.com");
-        attributes.put(ConfluenceConstants.API_KEY, "apiKey123");
+        attributes.put(ConfluenceConstants.API_KEY, "REDACTED_SECRET");
 
         when(confluenceAttributes.getRestClient()).thenReturn(restClient);
         when(restClient.doSyncGet(eq(APIVersion.V2), isNull(), eq("spaces"))).thenReturn(null);
@@ -234,7 +234,7 @@ class ConfluenceExtensionTest {
     void testValidateAttributes_OAuthFlow_MustAuthorizeFromGetRestClient() {
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(ConfluenceConstants.CLIENT_ID, "valid-client-id");
-        attributes.put(ConfluenceConstants.CLIENT_SECRET, "valid-client-secret-long-enough-32chars");
+        attributes.put(ConfluenceConstants.CLIENT_SECRET, "REDACTED_SECRET");
 
         when(confluenceAttributes.getRestClient())
                 .thenThrow(new MustAuthorizeException("Authorize yourself"));
@@ -247,7 +247,7 @@ class ConfluenceExtensionTest {
     void testValidateAttributes_OAuthFlow_Success() {
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(ConfluenceConstants.CLIENT_ID, "valid-client-id");
-        attributes.put(ConfluenceConstants.CLIENT_SECRET, "valid-client-secret-long-enough-32chars");
+        attributes.put(ConfluenceConstants.CLIENT_SECRET, "REDACTED_SECRET");
 
         when(confluenceAttributes.getRestClient()).thenReturn(restClient);
         when(restClient.doSyncGet(eq(APIVersion.V2), isNull(), eq("spaces"))).thenReturn(httpResponse);
