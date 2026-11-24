@@ -1,0 +1,18 @@
+{
+  "apiRequests": {
+    "static": {
+      "name": "Static Resource Binding",
+      "proto": [
+        "http"
+      ],
+      "impl": "app.krista.extension.util.StaticResourceProcessor:process"
+    },
+    "rest": {
+      "name": "JAX-RS Binding",
+      "proto": [
+        "http"
+      ],
+      "impl": "app.krista.extension.impl.jaxrs.JaxrsRequestProcessor:process"
+    }
+  }
+}

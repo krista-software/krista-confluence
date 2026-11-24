@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<table>
+    <thead>
+    <tr>
+        <th:block th:each="header : ${headers}">
+            <th>
+                <p th:text="${header}"><strong></strong></p>
+            </th>
+        </th:block>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="row : ${rows}">
+        <tr>
+            <th:block th:each="header : ${headers}">
+                <td><p th:text="${row.get(header)}"></p></td>
+            </th:block>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+</body>

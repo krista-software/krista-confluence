@@ -1,0 +1,756 @@
+{
+	"info": {
+		"_postman_id": "7b8a671c-fa71-484e-9815-2b27e0496ccc",
+		"name": "Confluence Help Center Sync",
+		"description": "Collection for fetching Spaces, Pages, Subpages, hierarchy tracing, and exports in Confluence Cloud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24412924",
+		"_collection_link": "https://galactic-crater-69625.postman.co/workspace/Office365~86b24220-a4f0-470e-9f0c-af4161360560/collection/24412924-7b8a671c-fa71-484e-9815-2b27e0496ccc?action=share&source=collection_link&creator=24412924"
+	},
+	"item": [
+		{
+			"name": "1. Get All Spaces",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic {{email}}:{{api_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{domain}}/wiki/api/v2/spaces",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"wiki",
+						"api",
+						"v2",
+						"spaces"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "1. Get All Spaces",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{email}}:{{api_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{domain}}/wiki/api/v2/spaces",
+							"protocol": "https",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"wiki",
+								"api",
+								"v2",
+								"spaces"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Aug 2025 05:38:53 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "AtlassianEdge"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Confluence-Request-Time",
+							"value": "1754285933523"
+						},
+						{
+							"key": "Link",
+							"value": "</wiki/api/v2/spaces?cursor=eyJpZCI6MjQ5NzkwNDc2LCJzcGFjZVNvcnRPcmRlciI6eyJmaWVsZCI6IklEIiwiZGlyZWN0aW9uIjoiQVNDRU5ESU5HIn0sInNwYWNlU29ydE9yZGVyVmFsdWUiOjI0OTc5MDQ3Nn0=>; rel=\"next\", <https://smartpayllc.atlassian.net/wiki>; rel=\"base\""
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Atl-Confluence-Via",
+							"value": "h:confluence-prod-us-3-3.prod.atl-paas.net"
+						},
+						{
+							"key": "Reporting-Endpoints",
+							"value": "default=\"https://dz8aopenkvv6s.cloudfront.net\""
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Xss-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Atl-Traceid",
+							"value": "5d91552fdfc54e6daab2faa18c976baf"
+						},
+						{
+							"key": "Atl-Request-Id",
+							"value": "5d91552f-dfc5-4e6d-aab2-faa18c976baf"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"endpoints\": [{\"url\": \"https://dz8aopenkvv6s.cloudfront.net\"}], \"group\": \"endpoint-1\", \"include_subdomains\": true, \"max_age\": 600}"
+						},
+						{
+							"key": "Nel",
+							"value": "{\"failure_fraction\": 0.001, \"include_subdomains\": true, \"max_age\": 600, \"report_to\": \"endpoint-1\"}"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 8b3f40eb1b765416dfc3f89172af0efe.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BOM78-P9"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "s9cmMG5d4lTJVB2acDlmnc7nbr-sNTnRlZQkJ1r7R4dIMpQ4KYsGbQ=="
+						},
+						{
+							"key": "Server-Timing",
+							"value": "cdn-upstream-layer;desc=\"EDGE\",cdn-upstream-dns;dur=0,cdn-upstream-connect;dur=214,cdn-upstream-fbl;dur=992,atl-edge;dur=133,atl-edge-internal;dur=25,atl-edge-upstream;dur=107,atl-edge-pop;desc=\"aws-us-east-1\",cdn-cache-miss,cdn-pop;desc=\"BOM78-P9\",cdn-rid;desc=\"s9cmMG5d4lTJVB2acDlmnc7nbr-sNTnRlZQkJ1r7R4dIMpQ4KYsGbQ==\",cdn-downstream-fbl;dur=997"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": [\n        {\n            \"spaceOwnerId\": \"60635160b30f0d007021f916\",\n            \"authorId\": \"60635160b30f0d007021f916\",\n            \"homepageId\": \"65618\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-03-03T21:41:11.469Z\",\n            \"name\": \"Ryan Kelley\",\n            \"key\": \"~60635160b30f0d007021f916\",\n            \"id\": \"65540\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~60635160b30f0d007021f916\"\n            },\n            \"currentActiveAlias\": \"~60635160b30f0d007021f916\"\n        },\n        {\n            \"spaceOwnerId\": \"5b92d3cb2786fb2bf79a88bd\",\n            \"authorId\": \"5b92d3cb2786fb2bf79a88bd\",\n            \"homepageId\": \"98406\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-03-03T21:32:51.514Z\",\n            \"name\": \"Software Development\",\n            \"key\": \"~5b92d3cb2786fb2bf79a88bd\",\n            \"id\": \"98306\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~5b92d3cb2786fb2bf79a88bd\"\n            },\n            \"currentActiveAlias\": \"~5b92d3cb2786fb2bf79a88bd\"\n        },\n        {\n            \"spaceOwnerId\": \"5b92d3cb2786fb2bf79a88bd\",\n            \"authorId\": \"5b92d3cb2786fb2bf79a88bd\",\n            \"homepageId\": \"163943\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-03-03T21:33:24.739Z\",\n            \"name\": \"Development\",\n            \"key\": \"DEVELOPMEN\",\n            \"id\": \"163844\",\n            \"type\": \"global\",\n            \"_links\": {\n                \"webui\": \"/spaces/DEVELOPMEN\"\n            },\n            \"currentActiveAlias\": \"DEVELOPMEN\"\n        },\n        {\n            \"spaceOwnerId\": \"60e4774bcf1849006a2c55c6\",\n            \"authorId\": \"60e4774bcf1849006a2c55c6\",\n            \"homepageId\": \"458957\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-03-03T21:44:17.680Z\",\n            \"name\": \"Joe Vago\",\n            \"key\": \"~60e4774bcf1849006a2c55c6\",\n            \"id\": \"458754\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~60e4774bcf1849006a2c55c6\"\n            },\n            \"currentActiveAlias\": \"~60e4774bcf1849006a2c55c6\"\n        },\n        {\n            \"spaceOwnerId\": \"5b99427d96cb052b5f65cb52\",\n            \"authorId\": \"5b99427d96cb052b5f65cb52\",\n            \"homepageId\": \"557265\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-03-03T22:14:35.472Z\",\n            \"name\": \"Dave Marin\",\n            \"key\": \"~5b99427d96cb052b5f65cb52\",\n            \"id\": \"557067\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~5b99427d96cb052b5f65cb52\"\n            },\n            \"currentActiveAlias\": \"~5b99427d96cb052b5f65cb52\"\n        },\n        {\n            \"spaceOwnerId\": \"628b980d891ea9006a9d6985\",\n            \"authorId\": \"628b980d891ea9006a9d6985\",\n            \"homepageId\": \"1245402\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-03-08T20:12:29.548Z\",\n            \"name\": \"Gulzar Dalal\",\n            \"key\": \"~628b980d891ea9006a9d6985\",\n            \"id\": \"1245198\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~628b980d891ea9006a9d6985\"\n            },\n            \"currentActiveAlias\": \"~628b980d891ea9006a9d6985\"\n        },\n        {\n            \"spaceOwnerId\": \"6408e11ffeb4b150c579cc7b\",\n            \"authorId\": \"6408e11ffeb4b150c579cc7b\",\n            \"homepageId\": \"1900745\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"archived\",\n            \"createdAt\": \"2023-03-08T22:27:01.137Z\",\n            \"name\": \"Jim Mooney\",\n            \"key\": \"~6408e11ffeb4b150c579cc7b\",\n            \"id\": \"1900546\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~6408e11ffeb4b150c579cc7b\"\n            },\n            \"currentActiveAlias\": \"~6408e11ffeb4b150c579cc7b\"\n        },\n        {\n            \"spaceOwnerId\": \"62cc663d8afb5805e5d3d71e\",\n            \"authorId\": \"62cc663d8afb5805e5d3d71e\",\n            \"homepageId\": \"2261198\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-03-10T06:00:52.807Z\",\n            \"name\": \"Clayton Terrill\",\n            \"key\": \"~62cc663d8afb5805e5d3d71e\",\n            \"id\": \"2260994\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~62cc663d8afb5805e5d3d71e\"\n            },\n            \"currentActiveAlias\": \"~62cc663d8afb5805e5d3d71e\"\n        },\n        {\n            \"spaceOwnerId\": \"61ae4eb0b0b630006a6f1a54\",\n            \"authorId\": \"61ae4eb0b0b630006a6f1a54\",\n            \"homepageId\": \"2883665\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-03-10T15:06:25.283Z\",\n            \"name\": \"Kelly Byrnes\",\n            \"key\": \"~61ae4eb0b0b630006a6f1a54\",\n            \"id\": \"2883586\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~61ae4eb0b0b630006a6f1a54\"\n            },\n            \"currentActiveAlias\": \"~61ae4eb0b0b630006a6f1a54\"\n        },\n        {\n            \"spaceOwnerId\": \"5b9945b230077c30154248e6\",\n            \"authorId\": \"5b9945b230077c30154248e6\",\n            \"homepageId\": \"3145935\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-03-13T13:06:53.888Z\",\n            \"name\": \"Jim Mooney\",\n            \"key\": \"~5b9945b230077c30154248e6\",\n            \"id\": \"3145731\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~5b9945b230077c30154248e6\"\n            },\n            \"currentActiveAlias\": \"~5b9945b230077c30154248e6\"\n        },\n        {\n            \"spaceOwnerId\": \"5b9946a730077c30154248e9\",\n            \"authorId\": \"5b9946a730077c30154248e9\",\n            \"homepageId\": \"3178697\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-03-13T13:06:55.033Z\",\n            \"name\": \"Ryan Pitt\",\n            \"key\": \"~5b9946a730077c30154248e9\",\n            \"id\": \"3178498\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~5b9946a730077c30154248e9\"\n            },\n            \"currentActiveAlias\": \"~5b9946a730077c30154248e9\"\n        },\n        {\n            \"spaceOwnerId\": \"5f28366e170ffc0023f1d5ad\",\n            \"authorId\": \"5f28366e170ffc0023f1d5ad\",\n            \"homepageId\": \"3342537\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-03-14T17:45:22.157Z\",\n            \"name\": \"Mike Gott\",\n            \"key\": \"~5f28366e170ffc0023f1d5ad\",\n            \"id\": \"3342338\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~5f28366e170ffc0023f1d5ad\"\n            },\n            \"currentActiveAlias\": \"~5f28366e170ffc0023f1d5ad\"\n        },\n        {\n            \"spaceOwnerId\": \"62e7f174d49df231b6270780\",\n            \"authorId\": \"62e7f174d49df231b6270780\",\n            \"homepageId\": \"4784334\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-03-17T19:32:56.861Z\",\n            \"name\": \"Drew Pennetti\",\n            \"key\": \"~62e7f174d49df231b6270780\",\n            \"id\": \"4784130\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~62e7f174d49df231b6270780\"\n            },\n            \"currentActiveAlias\": \"~62e7f174d49df231b6270780\"\n        },\n        {\n            \"spaceOwnerId\": \"62cdabbfe546e8eab8ee7edc\",\n            \"authorId\": \"62cdabbfe546e8eab8ee7edc\",\n            \"homepageId\": \"24281305\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"archived\",\n            \"createdAt\": \"2023-04-26T18:13:43.528Z\",\n            \"name\": \"Spencer Karrat\",\n            \"key\": \"~62cdabbfe546e8eab8ee7edc\",\n            \"id\": \"24281106\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~62cdabbfe546e8eab8ee7edc\"\n            },\n            \"currentActiveAlias\": \"~62cdabbfe546e8eab8ee7edc\"\n        },\n        {\n            \"spaceOwnerId\": \"5b9946a730077c30154248e9\",\n            \"authorId\": \"5b9946a730077c30154248e9\",\n            \"homepageId\": \"98926807\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-10-24T12:14:50.390Z\",\n            \"name\": \"IT\",\n            \"key\": \"IT\",\n            \"id\": \"98926596\",\n            \"type\": \"global\",\n            \"_links\": {\n                \"webui\": \"/spaces/IT\"\n            },\n            \"currentActiveAlias\": \"IT\"\n        },\n        {\n            \"spaceOwnerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"homepageId\": \"100171987\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-10-26T18:35:00.457Z\",\n            \"name\": \"Bill Turner\",\n            \"key\": \"~712020e1956ab512414316a73d731ee877daba\",\n            \"id\": \"100171783\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~712020e1956ab512414316a73d731ee877daba\"\n            },\n            \"currentActiveAlias\": \"~712020e1956ab512414316a73d731ee877daba\"\n        },\n        {\n            \"spaceOwnerId\": \"5b9946a730077c30154248e9\",\n            \"authorId\": \"5b9946a730077c30154248e9\",\n            \"homepageId\": \"100172206\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-10-26T18:46:45.946Z\",\n            \"name\": \"SmartPay Security Program\",\n            \"key\": \"SSP\",\n            \"id\": \"100171995\",\n            \"type\": \"global\",\n            \"_links\": {\n                \"webui\": \"/spaces/SSP\"\n            },\n            \"currentActiveAlias\": \"SSP\"\n        },\n        {\n            \"spaceOwnerId\": \"5b9945b03e56f62bec08e064\",\n            \"authorId\": \"5b9945b03e56f62bec08e064\",\n            \"homepageId\": \"109936738\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-11-10T13:44:49.043Z\",\n            \"name\": \"Bob Conerly\",\n            \"key\": \"~5b9945b03e56f62bec08e064\",\n            \"id\": \"109936659\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~5b9945b03e56f62bec08e064\"\n            },\n            \"currentActiveAlias\": \"~5b9945b03e56f62bec08e064\"\n        },\n        {\n            \"spaceOwnerId\": \"5b9946a730077c30154248e9\",\n            \"authorId\": \"5b9946a730077c30154248e9\",\n            \"homepageId\": \"110526739\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-11-13T16:40:10.275Z\",\n            \"name\": \"Demo service project\",\n            \"key\": \"DEMO\",\n            \"id\": \"110526524\",\n            \"type\": \"global\",\n            \"_links\": {\n                \"webui\": \"/spaces/DEMO\"\n            },\n            \"currentActiveAlias\": \"DEMO\"\n        },\n        {\n            \"spaceOwnerId\": \"5b9946a730077c30154248e9\",\n            \"authorId\": \"5b9946a730077c30154248e9\",\n            \"homepageId\": \"110821631\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-11-13T16:40:08.717Z\",\n            \"name\": \"Payroll Team\",\n            \"key\": \"PT\",\n            \"id\": \"110821416\",\n            \"type\": \"global\",\n            \"_links\": {\n                \"webui\": \"/spaces/PT\"\n            },\n            \"currentActiveAlias\": \"PT\"\n        },\n        {\n            \"spaceOwnerId\": \"60f08bfb43c9560070500770\",\n            \"authorId\": \"60f08bfb43c9560070500770\",\n            \"homepageId\": \"114426076\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2023-11-16T19:05:37.357Z\",\n            \"name\": \"Dane Johnston\",\n            \"key\": \"~60f08bfb43c9560070500770\",\n            \"id\": \"114425877\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~60f08bfb43c9560070500770\"\n            },\n            \"currentActiveAlias\": \"~60f08bfb43c9560070500770\"\n        },\n        {\n            \"spaceOwnerId\": \"712020:5c3c4381-179f-481e-9871-57f4cff84e50\",\n            \"authorId\": \"712020:5c3c4381-179f-481e-9871-57f4cff84e50\",\n            \"homepageId\": \"141492453\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2024-01-02T17:54:44.244Z\",\n            \"name\": \"Heath Miller\",\n            \"key\": \"~7120205c3c4381179f481e987157f4cff84e50\",\n            \"id\": \"141492249\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~7120205c3c4381179f481e987157f4cff84e50\"\n            },\n            \"currentActiveAlias\": \"~7120205c3c4381179f481e987157f4cff84e50\"\n        },\n        {\n            \"spaceOwnerId\": \"712020:539df9c4-f890-4fb9-bc52-4de7561dd22c\",\n            \"authorId\": \"712020:539df9c4-f890-4fb9-bc52-4de7561dd22c\",\n            \"homepageId\": \"239075553\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2024-03-28T20:23:19.975Z\",\n            \"name\": \"dcarbone\",\n            \"key\": \"~712020539df9c4f8904fb9bc524de7561dd22c\",\n            \"id\": \"239075349\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~712020539df9c4f8904fb9bc524de7561dd22c\"\n            },\n            \"currentActiveAlias\": \"~712020539df9c4f8904fb9bc524de7561dd22c\"\n        },\n        {\n            \"spaceOwnerId\": \"712020:fec5a0f7-76bf-4318-b06c-33fe3dccc2fe\",\n            \"authorId\": \"712020:fec5a0f7-76bf-4318-b06c-33fe3dccc2fe\",\n            \"homepageId\": \"244646108\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"current\",\n            \"createdAt\": \"2024-04-02T21:38:42.392Z\",\n            \"name\": \"msloan\",\n            \"key\": \"~712020fec5a0f776bf4318b06c33fe3dccc2fe\",\n            \"id\": \"244645909\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~712020fec5a0f776bf4318b06c33fe3dccc2fe\"\n            },\n            \"currentActiveAlias\": \"~712020fec5a0f776bf4318b06c33fe3dccc2fe\"\n        },\n        {\n            \"spaceOwnerId\": \"712020:1fb2c147-d208-480a-8cc5-ba90f1af9a41\",\n            \"authorId\": \"712020:1fb2c147-d208-480a-8cc5-ba90f1af9a41\",\n            \"homepageId\": \"249790560\",\n            \"icon\": null,\n            \"description\": null,\n            \"status\": \"archived\",\n            \"createdAt\": \"2024-04-05T17:05:43.603Z\",\n            \"name\": \"matt\",\n            \"key\": \"~7120201fb2c147d208480a8cc5ba90f1af9a41\",\n            \"id\": \"249790476\",\n            \"type\": \"personal\",\n            \"_links\": {\n                \"webui\": \"/spaces/~7120201fb2c147d208480a8cc5ba90f1af9a41\"\n            },\n            \"currentActiveAlias\": \"~7120201fb2c147d208480a8cc5ba90f1af9a41\"\n        }\n    ],\n    \"_links\": {\n        \"next\": \"/wiki/api/v2/spaces?cursor=eyJpZCI6MjQ5NzkwNDc2LCJzcGFjZVNvcnRPcmRlciI6eyJmaWVsZCI6IklEIiwiZGlyZWN0aW9uIjoiQVNDRU5ESU5HIn0sInNwYWNlU29ydE9yZGVyVmFsdWUiOjI0OTc5MDQ3Nn0=\",\n        \"base\": \"https://smartpayllc.atlassian.net/wiki\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Space By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{domain}}/wiki/api/v2/spaces/104169487",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"wiki",
+						"api",
+						"v2",
+						"spaces",
+						"104169487"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{domain}}/wiki/api/v2/spaces/65540",
+							"protocol": "https",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"wiki",
+								"api",
+								"v2",
+								"spaces",
+								"65540"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Aug 2025 09:36:45 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "AtlassianEdge"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Confluence-Request-Time",
+							"value": "1754300205576"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+						},
+						{
+							"key": "Link",
+							"value": "<https://smartpayllc.atlassian.net/wiki>; rel=\"base\""
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Atl-Confluence-Via",
+							"value": "h:confluence-prod-us-3-3.prod.atl-paas.net"
+						},
+						{
+							"key": "Reporting-Endpoints",
+							"value": "default=\"https://dz8aopenkvv6s.cloudfront.net\""
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Xss-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Atl-Traceid",
+							"value": "7cfebd5658354aac80418c8c54918091"
+						},
+						{
+							"key": "Atl-Request-Id",
+							"value": "7cfebd56-5835-4aac-8041-8c8c54918091"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"endpoints\": [{\"url\": \"https://dz8aopenkvv6s.cloudfront.net\"}], \"group\": \"endpoint-1\", \"include_subdomains\": true, \"max_age\": 600}"
+						},
+						{
+							"key": "Nel",
+							"value": "{\"failure_fraction\": 0.001, \"include_subdomains\": true, \"max_age\": 600, \"report_to\": \"endpoint-1\"}"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 a6449fe434d97f2e861dcb13e431e0b4.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BOM78-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "gdTK51JufzBmEO-PO1i5mG0m0iAMiVGPVd27H1hCOfM-5LqZ5YBDoQ=="
+						},
+						{
+							"key": "Server-Timing",
+							"value": "cdn-upstream-layer;desc=\"EDGE\",cdn-upstream-dns;dur=0,cdn-upstream-connect;dur=215,cdn-upstream-fbl;dur=997,atl-edge;dur=131,atl-edge-internal;dur=17,atl-edge-upstream;dur=115,atl-edge-pop;desc=\"aws-us-east-1\",cdn-cache-miss,cdn-pop;desc=\"BOM78-P2\",cdn-rid;desc=\"gdTK51JufzBmEO-PO1i5mG0m0iAMiVGPVd27H1hCOfM-5LqZ5YBDoQ==\",cdn-downstream-fbl;dur=1001"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"spaceOwnerId\": \"60635160b30f0d007021f916\",\n    \"icon\": null,\n    \"createdAt\": \"2023-03-03T21:41:11.469Z\",\n    \"authorId\": \"60635160b30f0d007021f916\",\n    \"homepageId\": \"65618\",\n    \"description\": {},\n    \"status\": \"current\",\n    \"name\": \"Ryan Kelley\",\n    \"key\": \"~60635160b30f0d007021f916\",\n    \"id\": \"65540\",\n    \"type\": \"personal\",\n    \"_links\": {\n        \"webui\": \"/spaces/~60635160b30f0d007021f916\",\n        \"base\": \"https://smartpayllc.atlassian.net/wiki\"\n    },\n    \"currentActiveAlias\": \"~60635160b30f0d007021f916\"\n}"
+				}
+			]
+		},
+		{
+			"name": "2. Get Pages in Space",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic {{email}}:{{api_token}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{domain}}/wiki/api/v2/spaces/100171995/pages?expand=ancestors",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"wiki",
+						"api",
+						"v2",
+						"spaces",
+						"100171995",
+						"pages"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "ancestors"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "2. Get Pages in Space",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{email}}:{{api_token}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{domain}}/wiki/api/v2/spaces/100171995/pages",
+							"protocol": "https",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"wiki",
+								"api",
+								"v2",
+								"spaces",
+								"100171995",
+								"pages"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 21 Sep 2025 09:12:28 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "AtlassianEdge"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Confluence-Request-Time",
+							"value": "1758445948867"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+						},
+						{
+							"key": "Link",
+							"value": "</wiki/api/v2/spaces/100171995/pages?cursor=eyJpZCI6IjEwMzE1MzY3MyIsImNvbnRlbnRPcmRlciI6ImlkIiwiY29udGVudE9yZGVyVmFsdWUiOjEwMzE1MzY3M30=>; rel=\"next\", <https://smartpayllc.atlassian.net/wiki>; rel=\"base\""
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Atl-Confluence-Via",
+							"value": "h:confluence-prod-us-3-2.prod.atl-paas.net"
+						},
+						{
+							"key": "Reporting-Endpoints",
+							"value": "default=\"https://dz8aopenkvv6s.cloudfront.net\""
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Xss-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Atl-Traceid",
+							"value": "d1e0f7d0d5bb4413b7669bdc3511acf9"
+						},
+						{
+							"key": "Atl-Request-Id",
+							"value": "d1e0f7d0-d5bb-4413-b766-9bdc3511acf9"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"endpoints\": [{\"url\": \"https://dz8aopenkvv6s.cloudfront.net\"}], \"group\": \"endpoint-1\", \"include_subdomains\": true, \"max_age\": 600}"
+						},
+						{
+							"key": "Nel",
+							"value": "{\"failure_fraction\": 0.001, \"include_subdomains\": true, \"max_age\": 600, \"report_to\": \"endpoint-1\"}"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 29d8d0a84da72841b950940e9ef7fc90.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BOM78-P6"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "01tAZGjUDOY2fkBjO-sCpgI767aJTRXa6lz0Ci3U43G3E9ZnEH5ZYg=="
+						},
+						{
+							"key": "Server-Timing",
+							"value": "cdn-upstream-layer;desc=\"EDGE\",cdn-upstream-dns;dur=0,cdn-upstream-connect;dur=249,cdn-upstream-fbl;dur=1086,atl-edge;dur=86,atl-edge-internal;dur=14,atl-edge-upstream;dur=71,atl-edge-pop;desc=\"aws-us-east-1\",cdn-cache-miss,cdn-pop;desc=\"BOM78-P6\",cdn-rid;desc=\"01tAZGjUDOY2fkBjO-sCpgI767aJTRXa6lz0Ci3U43G3E9ZnEH5ZYg==\",cdn-downstream-fbl;dur=1090"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": [\n        {\n            \"parentId\": \"104169487\",\n            \"ownerId\": \"5b9946a730077c30154248e9\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-26T18:48:01.774Z\",\n            \"authorId\": \"5b9946a730077c30154248e9\",\n            \"parentType\": \"page\",\n            \"position\": 842,\n            \"id\": \"100040717\",\n            \"version\": {\n                \"number\": 34,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"5b9946a730077c30154248e9\",\n                \"createdAt\": \"2025-04-03T13:04:21.189Z\",\n                \"ncsStepVersion\": \"87\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Access Control Policy\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=100040717\",\n                \"webui\": \"/spaces/SSP/pages/100040717/Access+Control+Policy\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/100040717\",\n                \"tinyui\": \"/x/DYD2BQ\"\n            }\n        },\n        {\n            \"parentId\": null,\n            \"ownerId\": \"5b9946a730077c30154248e9\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-26T18:46:46.884Z\",\n            \"authorId\": \"5b9946a730077c30154248e9\",\n            \"parentType\": null,\n            \"position\": 671,\n            \"id\": \"100172206\",\n            \"version\": {\n                \"number\": 7,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"5b9946a730077c30154248e9\",\n                \"createdAt\": \"2023-10-27T13:25:14.869Z\",\n                \"ncsStepVersion\": \"65\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"SmartPay Security Program\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=100172206\",\n                \"webui\": \"/spaces/SSP/overview\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/100172206\",\n                \"tinyui\": \"/x/roH4BQ\"\n            }\n        },\n        {\n            \"parentId\": \"100040717\",\n            \"ownerId\": \"5b9946a730077c30154248e9\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-26T18:54:29.713Z\",\n            \"authorId\": \"5b9946a730077c30154248e9\",\n            \"parentType\": \"page\",\n            \"position\": 542,\n            \"id\": \"100172244\",\n            \"version\": {\n                \"number\": 21,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"5b9945b230077c30154248e6\",\n                \"createdAt\": \"2024-06-07T12:43:26.123Z\",\n                \"ncsStepVersion\": \"1\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Principle of Least Privilege and Need to Know\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=100172244\",\n                \"webui\": \"/spaces/SSP/pages/100172244/Principle+of+Least+Privilege+and+Need+to+Know\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/100172244\",\n                \"tinyui\": \"/x/1IH4BQ\"\n            }\n        },\n        {\n            \"parentId\": \"100040717\",\n            \"ownerId\": \"5b9946a730077c30154248e9\",\n            \"sourceTemplateEntityId\": \"101416998\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-30T16:21:43.093Z\",\n            \"authorId\": \"5b9946a730077c30154248e9\",\n            \"parentType\": \"page\",\n            \"position\": 580,\n            \"id\": \"101679147\",\n            \"version\": {\n                \"number\": 2,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"5b9946a730077c30154248e9\",\n                \"createdAt\": \"2023-10-30T16:52:41.215Z\",\n                \"ncsStepVersion\": \"470\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"MFA Deployment\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=101679147\",\n                \"webui\": \"/spaces/SSP/pages/101679147/MFA+Deployment\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/101679147\",\n                \"tinyui\": \"/x/K4APBg\"\n            }\n        },\n        {\n            \"parentId\": \"100040717\",\n            \"ownerId\": \"5b9946a730077c30154248e9\",\n            \"sourceTemplateEntityId\": \"101416998\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-30T14:00:43.837Z\",\n            \"authorId\": \"5b9946a730077c30154248e9\",\n            \"parentType\": \"page\",\n            \"position\": 1211,\n            \"id\": \"101810190\",\n            \"version\": {\n                \"number\": 13,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2024-03-20T13:48:41.019Z\",\n                \"ncsStepVersion\": \"467\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Access Provisioning/De-Provisioning\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=101810190\",\n                \"webui\": \"/spaces/SSP/pages/101810190/Access+Provisioning+De-Provisioning\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/101810190\",\n                \"tinyui\": \"/x/DoARBg\"\n            }\n        },\n        {\n            \"parentId\": \"100040717\",\n            \"ownerId\": \"5b9946a730077c30154248e9\",\n            \"sourceTemplateEntityId\": \"101416998\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-30T14:05:37.156Z\",\n            \"authorId\": \"5b9946a730077c30154248e9\",\n            \"parentType\": \"page\",\n            \"position\": 1788,\n            \"id\": \"101810202\",\n            \"version\": {\n                \"number\": 13,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2024-03-20T13:49:14.761Z\",\n                \"ncsStepVersion\": \"206\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Access monitoring\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=101810202\",\n                \"webui\": \"/spaces/SSP/pages/101810202/Access+monitoring\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/101810202\",\n                \"tinyui\": \"/x/GoARBg\"\n            }\n        },\n        {\n            \"parentId\": \"100040717\",\n            \"ownerId\": \"5b9946a730077c30154248e9\",\n            \"sourceTemplateEntityId\": \"101416998\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T12:32:10.900Z\",\n            \"authorId\": \"5b9946a730077c30154248e9\",\n            \"parentType\": \"page\",\n            \"position\": 4652,\n            \"id\": \"102465586\",\n            \"version\": {\n                \"number\": 10,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2024-03-20T14:13:11.925Z\",\n                \"ncsStepVersion\": \"374\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Password complexity enforcement\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102465586\",\n                \"webui\": \"/spaces/SSP/pages/102465586/Password+complexity+enforcement\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102465586\",\n                \"tinyui\": \"/x/MoAbBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T19:13:39.693Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 572249758,\n            \"id\": \"102596642\",\n            \"version\": {\n                \"number\": 7,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2025-04-10T13:22:52.343Z\",\n                \"ncsStepVersion\": \"4\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Board of Directors Meeting Agenda and Minutes\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102596642\",\n                \"webui\": \"/spaces/SSP/pages/102596642/Board+of+Directors+Meeting+Agenda+and+Minutes\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102596642\",\n                \"tinyui\": \"/x/IoAdBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T19:53:11.990Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 962704296,\n            \"id\": \"102596664\",\n            \"version\": {\n                \"number\": 3,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2025-04-10T13:23:50.772Z\",\n                \"ncsStepVersion\": \"25\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Employee Termination Checklist\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102596664\",\n                \"webui\": \"/spaces/SSP/pages/102596664/Employee+Termination+Checklist\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102596664\",\n                \"tinyui\": \"/x/OIAdBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T19:25:01.255Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 865088437,\n            \"id\": \"102727746\",\n            \"version\": {\n                \"number\": 2,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"5b9946a730077c30154248e9\",\n                \"createdAt\": \"2024-05-14T14:23:31.533Z\",\n                \"ncsStepVersion\": \"7\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Cloud Service Provider Agreement\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102727746\",\n                \"webui\": \"/spaces/SSP/pages/102727746/Cloud+Service+Provider+Agreement\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102727746\",\n                \"tinyui\": \"/x/QoAfBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T19:47:45.212Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 962703200,\n            \"id\": \"102727770\",\n            \"version\": {\n                \"number\": 6,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2025-04-10T13:13:36.040Z\",\n                \"ncsStepVersion\": \"4\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Cybersecurity Insurance policy document\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102727770\",\n                \"webui\": \"/spaces/SSP/pages/102727770/Cybersecurity+Insurance+policy+document\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102727770\",\n                \"tinyui\": \"/x/WoAfBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T19:21:24.638Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 767475544,\n            \"id\": \"102793250\",\n            \"version\": {\n                \"number\": 4,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2025-04-10T13:14:51.635Z\",\n                \"ncsStepVersion\": \"9\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"CI/CD system in use\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102793250\",\n                \"webui\": \"/spaces/SSP/pages/102793250/CI+CD+system+in+use\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102793250\",\n                \"tinyui\": \"/x/IoAgBg\"\n            }\n        },\n        {\n            \"parentId\": \"100040717\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T13:58:11.067Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 4630,\n            \"id\": \"102858764\",\n            \"version\": {\n                \"number\": 11,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2024-03-20T13:54:47.940Z\",\n                \"ncsStepVersion\": \"19\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"User Training\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102858764\",\n                \"webui\": \"/spaces/SSP/pages/102858764/User+Training\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102858764\",\n                \"tinyui\": \"/x/DIAhBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T19:10:03.606Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 474636865,\n            \"id\": \"102858818\",\n            \"version\": {\n                \"number\": 7,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2025-04-10T13:12:19.467Z\",\n                \"ncsStepVersion\": \"4\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Board of Director CVs\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102858818\",\n                \"webui\": \"/spaces/SSP/pages/102858818/Board+of+Director+CVs\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102858818\",\n                \"tinyui\": \"/x/QoAhBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T19:32:20.971Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 865089332,\n            \"id\": \"102858850\",\n            \"version\": {\n                \"number\": 6,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2025-04-10T13:11:36.227Z\",\n                \"ncsStepVersion\": \"4\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Contractor Agreement\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102858850\",\n                \"webui\": \"/spaces/SSP/pages/102858850/Contractor+Agreement\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102858850\",\n                \"tinyui\": \"/x/YoAhBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T18:24:02.696Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 84185293,\n            \"id\": \"102924311\",\n            \"version\": {\n                \"number\": 7,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2023-11-01T16:30:12.428Z\",\n                \"ncsStepVersion\": \"653\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Access request tickets and history\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102924311\",\n                \"webui\": \"/spaces/SSP/pages/102924311/Access+request+tickets+and+history\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102924311\",\n                \"tinyui\": \"/x/F4AiBg\"\n            }\n        },\n        {\n            \"parentId\": \"109805587\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T18:21:52.644Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 170321123,\n            \"id\": \"102957062\",\n            \"version\": {\n                \"number\": 4,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2024-03-25T18:00:11.074Z\",\n                \"ncsStepVersion\": \"13\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Document Library\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102957062\",\n                \"webui\": \"/spaces/SSP/pages/102957062/Document+Library\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102957062\",\n                \"tinyui\": \"/x/BgAjBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T19:28:11.475Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 865089019,\n            \"id\": \"102957082\",\n            \"version\": {\n                \"number\": 4,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"60f08bfb43c9560070500770\",\n                \"createdAt\": \"2024-01-15T19:03:20.424Z\",\n                \"ncsStepVersion\": \"1\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Completed performance evaluations\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102957082\",\n                \"webui\": \"/spaces/SSP/pages/102957082/Completed+performance+evaluations\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102957082\",\n                \"tinyui\": \"/x/GgAjBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T19:01:03.328Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 962716788,\n            \"id\": \"102989878\",\n            \"version\": {\n                \"number\": 6,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2023-11-01T18:21:37.083Z\",\n                \"ncsStepVersion\": \"159\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Vanta Document Template\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102989878\",\n                \"webui\": \"/spaces/SSP/pages/102989878/Vanta+Document+Template\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102989878\",\n                \"tinyui\": \"/x/NoAjBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T19:03:20.557Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 377023972,\n            \"id\": \"102989890\",\n            \"version\": {\n                \"number\": 3,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2025-04-10T13:11:08.339Z\",\n                \"ncsStepVersion\": \"9\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Board of Directors Charter\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102989890\",\n                \"webui\": \"/spaces/SSP/pages/102989890/Board+of+Directors+Charter\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102989890\",\n                \"tinyui\": \"/x/QoAjBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T19:45:03.932Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 962703056,\n            \"id\": \"102989916\",\n            \"version\": {\n                \"number\": 3,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2024-04-11T19:54:02.802Z\",\n                \"ncsStepVersion\": \"2\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Customer Support Site or Email alias\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=102989916\",\n                \"webui\": \"/spaces/SSP/pages/102989916/Customer+Support+Site+or+Email+alias\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/102989916\",\n                \"tinyui\": \"/x/XIAjBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T18:34:16.102Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 181798186,\n            \"id\": \"103022605\",\n            \"version\": {\n                \"number\": 6,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2024-03-22T16:50:58.705Z\",\n                \"ncsStepVersion\": \"22\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Anonymous whistleblower channel\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=103022605\",\n                \"webui\": \"/spaces/SSP/pages/103022605/Anonymous+whistleblower+channel\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/103022605\",\n                \"tinyui\": \"/x/DQAkBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T19:41:35.706Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 962702275,\n            \"id\": \"103022633\",\n            \"version\": {\n                \"number\": 2,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2023-11-17T15:16:18.723Z\",\n                \"ncsStepVersion\": \"151\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Customer Data Deletion Record\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=103022633\",\n                \"webui\": \"/spaces/SSP/pages/103022633/Customer+Data+Deletion+Record\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/103022633\",\n                \"tinyui\": \"/x/KQAkBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T19:57:57.819Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 962705032,\n            \"id\": \"103088159\",\n            \"version\": {\n                \"number\": 4,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2025-04-10T13:10:07.692Z\",\n                \"ncsStepVersion\": \"32\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Incident report or root cause analysis\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=103088159\",\n                \"webui\": \"/spaces/SSP/pages/103088159/Incident+report+or+root+cause+analysis\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/103088159\",\n                \"tinyui\": \"/x/HwAlBg\"\n            }\n        },\n        {\n            \"parentId\": \"102957062\",\n            \"ownerId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"lastOwnerId\": null,\n            \"createdAt\": \"2023-10-31T18:49:06.968Z\",\n            \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n            \"parentType\": \"page\",\n            \"position\": 279411079,\n            \"id\": \"103153673\",\n            \"version\": {\n                \"number\": 2,\n                \"message\": \"\",\n                \"minorEdit\": false,\n                \"authorId\": \"712020:e1956ab5-1241-4316-a73d-731ee877daba\",\n                \"createdAt\": \"2023-11-03T14:25:16.966Z\",\n                \"ncsStepVersion\": \"299\"\n            },\n            \"spaceId\": \"100171995\",\n            \"status\": \"current\",\n            \"body\": {},\n            \"title\": \"Application Status Page\",\n            \"_links\": {\n                \"editui\": \"/pages/resumedraft.action?draftId=103153673\",\n                \"webui\": \"/spaces/SSP/pages/103153673/Application+Status+Page\",\n                \"edituiv2\": \"/spaces/SSP/pages/edit-v2/103153673\",\n                \"tinyui\": \"/x/CQAmBg\"\n            }\n        }\n    ],\n    \"_links\": {\n        \"next\": \"/wiki/api/v2/spaces/100171995/pages?cursor=eyJpZCI6IjEwMzE1MzY3MyIsImNvbnRlbnRPcmRlciI6ImlkIiwiY29udGVudE9yZGVyVmFsdWUiOjEwMzE1MzY3M30=\",\n        \"base\": \"https://smartpayllc.atlassian.net/wiki\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "9. Get Page Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic {{email}}:{{api_token}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{domain}}/wiki/api/v2/pages/{{pageId}}?body-format=storage",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"wiki",
+						"api",
+						"v2",
+						"pages",
+						"{{pageId}}"
+					],
+					"query": [
+						{
+							"key": "body-format",
+							"value": "storage"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pages - Draft Status (V1 API)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{confluence_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{domain}}/wiki/rest/api/content?body-format=storage&spaceKey=DEVELOPMEN&type=page&status=SSP&limit=1000&expand=body.storage",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"wiki",
+						"rest",
+						"api",
+						"content"
+					],
+					"query": [
+						{
+							"key": "body-format",
+							"value": "storage"
+						},
+						{
+							"key": "spaceKey",
+							"value": "DEVELOPMEN"
+						},
+						{
+							"key": "type",
+							"value": "page"
+						},
+						{
+							"key": "status",
+							"value": "SSP"
+						},
+						{
+							"key": "limit",
+							"value": "1000"
+						},
+						{
+							"key": "expand",
+							"value": "body.storage"
+						}
+					]
+				},
+				"description": "Get draft pages in the specified space"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pages - Current Status (V1 API)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{confluence_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://smartpayllc.atlassian.net/wiki/rest/api/content?body-format=storage&type=page&expand=body.storage&spaceKey=SSP&status=current&limit=1000",
+					"protocol": "https",
+					"host": [
+						"smartpayllc",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"wiki",
+						"rest",
+						"api",
+						"content"
+					],
+					"query": [
+						{
+							"key": "body-format",
+							"value": "storage"
+						},
+						{
+							"key": "type",
+							"value": "page"
+						},
+						{
+							"key": "expand",
+							"value": "body.storage"
+						},
+						{
+							"key": "spaceKey",
+							"value": "SSP"
+						},
+						{
+							"key": "status",
+							"value": "current"
+						},
+						{
+							"key": "limit",
+							"value": "1000"
+						}
+					]
+				},
+				"description": "Get current/published pages in the specified space"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Space by ID (V2 API)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{confluence_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{domain}}/wiki/api/v2/spaces/{{spaceId}}",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"wiki",
+						"api",
+						"v2",
+						"spaces",
+						"{{spaceId}}"
+					]
+				},
+				"description": "Get space details by ID to retrieve space key for pages query"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{api_token}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{confluence_email}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "your-domain.atlassian.net"
+		},
+		{
+			"key": "email",
+			"value": "you@yourcompany.com"
+		},
+		{
+			"key": "api_token",
+			"value": ""
+		},
+		{
+			"key": "base_url",
+			"value": "https://{{domain}}/wiki/api/v2"
+		}
+	]
+}

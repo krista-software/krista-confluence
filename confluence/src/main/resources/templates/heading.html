@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<td th:switch="${type}">
+    <h1 th:case="h1" th:text="${content}" th:style="|text-align:${alignment}|"></h1>
+    <h2 th:case="h2" th:text="${content}" th:style="|text-align:${alignment}|"></h2>
+    <h3 th:case="h3" th:text="${content}" th:style="|text-align:${alignment}|"></h3>
+    <h4 th:case="h4" th:text="${content}" th:style="|text-align:${alignment}|"></h4>
+    <h5 th:case="h5" th:text="${content}" th:style="|text-align:${alignment}|"></h5>
+    <h6 th:case="h6" th:text="${content}" th:style="|text-align:${alignment}|"></h6>
+    <br th:if="${break}">
+</td>
+</body>
+</html>
